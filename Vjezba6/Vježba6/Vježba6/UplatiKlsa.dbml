@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Uplatnice" Class="UplatiKlsaDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Uplatnice.mdf;Integrated Security=True" SettingsObjectName="Vježba6.Properties.Settings" SettingsPropertyName="UplatniceConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Izvor" Member="Izvors">
+    <Type Name="Izvor">
+      <Column Name="IdIzvor" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IBAN" Type="System.String" DbType="NVarChar(21) NOT NULL" CanBeNull="false" />
+      <Column Name="Model" Type="System.String" DbType="NVarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="PozivniBroj" Type="System.String" DbType="NVarChar(22) NOT NULL" CanBeNull="false" />
+      <Association Name="Izvor_Uplata" Member="Uplatas" ThisKey="IdIzvor" OtherKey="PlatiIzvorID" Type="Uplata" />
+      <Association Name="Izvor_Uplata1" Member="Uplatas1" ThisKey="IdIzvor" OtherKey="PrimiIzvorID" Type="Uplata" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Korisnik" Member="Korisniks">
+    <Type Name="Korisnik">
+      <Column Name="IdKorisnik" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Ime" Type="System.String" DbType="NChar(35) NOT NULL" CanBeNull="false" />
+      <Column Name="Adresa" Type="System.String" DbType="NChar(65) NOT NULL" CanBeNull="false" />
+      <Association Name="Korisnik_Uplata" Member="Uplatas" ThisKey="IdKorisnik" OtherKey="PlatiID" Type="Uplata" />
+      <Association Name="Korisnik_Uplata1" Member="Uplatas1" ThisKey="IdKorisnik" OtherKey="PrimiID" Type="Uplata" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Uplata" Member="Uplatas">
+    <Type Name="Uplata">
+      <Column Name="IdUplata" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PlatiID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PrimiID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PlatiIzvorID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PrimiIzvorID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SifraNamjene" Type="System.String" DbType="NVarChar(3)" CanBeNull="true" />
+      <Column Name="Opis" Type="System.String" DbType="NChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="DatumIzvrsenja" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Iznos" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Valuta" Type="System.String" DbType="NChar(3) NOT NULL" CanBeNull="false" />
+      <Association Name="Korisnik_Uplata" Member="Korisnik" ThisKey="PlatiID" OtherKey="IdKorisnik" Type="Korisnik" IsForeignKey="true" />
+      <Association Name="Izvor_Uplata" Member="Izvor" ThisKey="PlatiIzvorID" OtherKey="IdIzvor" Type="Izvor" IsForeignKey="true" />
+      <Association Name="Korisnik_Uplata1" Member="Korisnik1" ThisKey="PrimiID" OtherKey="IdKorisnik" Type="Korisnik" IsForeignKey="true" />
+      <Association Name="Izvor_Uplata1" Member="Izvor1" ThisKey="PrimiIzvorID" OtherKey="IdIzvor" Type="Izvor" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="UplatiKlsa">
+  <DataContextMoniker Name="/UplatiKlsaDataContext" />
+  <nestedChildShapes>
+    <classShape Id="947b8e4b-6f81-4bbe-9296-b15b0ae6883e" absoluteBounds="0.5, 4.125, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/UplatiKlsaDataContext/Izvor" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f932db1b-083b-489f-aa12-691a91f54cd8" absoluteBounds="0.515, 4.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="10955e4c-1881-4741-8839-6d0adc26a3b9" absoluteBounds="0.5, 1.5, 2, 1.3862939453125003">
+      <DataClassMoniker Name="/UplatiKlsaDataContext/Korisnik" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0106e325-21e2-4dd2-9c75-ee3bd22b4ebb" absoluteBounds="0.515, 1.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="293c29e8-5547-497a-9819-ba14cb579507" absoluteBounds="3.25, 1, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/UplatiKlsaDataContext/Uplata" />
+      <nestedChildShapes>
+        <elementListCompartment Id="81c47f47-0b30-420d-abc6-77893cd0e170" absoluteBounds="3.265, 1.46, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.5 : 2.19314697265625); (3.25 : 2.19314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/UplatiKlsaDataContext/Korisnik/Korisnik_Uplata" />
+      <nodes>
+        <classShapeMoniker Id="10955e4c-1881-4741-8839-6d0adc26a3b9" />
+        <classShapeMoniker Id="293c29e8-5547-497a-9819-ba14cb579507" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.5 : 4.91429768880208); (4.25 : 4.91429768880208); (4.25 : 3.73240397135417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/UplatiKlsaDataContext/Izvor/Izvor_Uplata" />
+      <nodes>
+        <classShapeMoniker Id="947b8e4b-6f81-4bbe-9296-b15b0ae6883e" />
+        <classShapeMoniker Id="293c29e8-5547-497a-9819-ba14cb579507" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.5 : 1.78407348632813); (3.25 : 1.78407348632813)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/UplatiKlsaDataContext/Korisnik/Korisnik_Uplata1" />
+      <nodes>
+        <classShapeMoniker Id="10955e4c-1881-4741-8839-6d0adc26a3b9" />
+        <classShapeMoniker Id="293c29e8-5547-497a-9819-ba14cb579507" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.5 : 4.48839634440104); (3.7187475 : 4.48839634440104); (3.7187475 : 3.73240397135417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/UplatiKlsaDataContext/Izvor/Izvor_Uplata1" />
+      <nodes>
+        <classShapeMoniker Id="947b8e4b-6f81-4bbe-9296-b15b0ae6883e" />
+        <classShapeMoniker Id="293c29e8-5547-497a-9819-ba14cb579507" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
